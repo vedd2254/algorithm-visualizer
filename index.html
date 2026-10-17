@@ -1,1 +1,60 @@
 
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Algorithm Visualizer</title>
+
+    <link rel="stylesheet" href="style.css">
+    <script src="script.js" defer></script>
+    
+</head>
+
+
+<body>
+
+    <div class="workspace">
+        <header>
+            <h1>Algorithm Visualizer</h1>
+            <p>Real-time algorithm execution & performance telemetry</p>
+        </header>
+
+        <div class="controls-grid">
+            <div class="control-group">
+                <label for="algorithm">Algorithm</label>
+                <select id="algorithm">
+                    <option value="bubble">Bubble Sort</option>
+                    <option value="selection">Selection Sort</option>
+                    <option value="insertion">Insertion Sort</option>
+                </select>
+            </div>
+
+            <div class="control-group">
+                <label for="numbers">Custom Data (Comma-separated)</label>
+                <input type="text" id="numbers" placeholder="e.g. 45, 12, 89, 23, 67">
+            </div>
+
+            <div class="control-group">
+                <label for="speedSlider">Delay (ms): <span id="speedVal">30</span></label>
+                <input type="range" id="speedSlider" min="5" max="200" value="30">
+            </div>
+
+            <div class="control-group" style="justify-content: flex-end;">
+                <div class="btn-container">
+                    <button class="btn-secondary" id="newArrBtn">Randomize</button>
+                    <button class="btn-primary" id="startBtn">Visualize</button>
+                </div>
+            </div>
+        </div>
+
+        <div class="telemetry-bar">
+            <div>Comparisons: <span id="compCount">0</span></div>
+            <div>Swaps: <span id="swapCount">0</span></div>
+            <div>Elapsed Time: <span id="timeCount">0.00s</span></div>
+        </div>
+
+        <div class="stage" id="stage"></div>
+    </div>
+</body>
+</html>
