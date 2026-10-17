@@ -5,6 +5,9 @@ This project focuses on visually demonstrating how algorithms work step by step,
 
 The project is designed as a learning tool to strengthen understanding of algorithms, data structures, and JavaScript logic through visualization rather than static code examples.
 
+Here's the link for the visualizer, i completed it finally, although i took help from ai, I learnt more about html structuring, styling using css, and javascript.
+https://vedd2254.github.io/algorithm-visualizer/
+
 ## Planned Features
 - Bubble Sort visualization
 - Step-by-step animation of comparisons and swaps
