@@ -1,1 +1,188 @@
 
+        :root {
+            --bg-base: #090d16;
+            --surface: #111827;
+            --surface-border: #2a2b2f;
+            --text-main: #f3f4f6;
+            --text-muted: #9ca3af;
+            --accent: #d1f1ff;
+            --accent-hover: #b6daea;
+            --compare: #f59e0b;
+            --swap: #10b981;
+            --radius: 10px;
+        }
+
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+            font-family: 'Inter', system-ui, -apple-system, sans-serif;
+        }
+
+        body {
+            background-color: var(--bg-base);
+            color: var(--text-main);
+            height: 100vh;
+            height: 100dvh;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            padding: 1rem;
+            overflow: hidden;
+        }
+
+        .workspace {
+            width: 100%;
+            max-width: 900px;
+            background-color: var(--surface);
+            border: 1px solid var(--surface-border);
+            border-radius: var(--radius);
+            padding: 1.5rem;
+            box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.5), 0 8px 10px -6px rgba(0, 0, 0, 0.5);
+            display: flex;
+            flex-direction: column;
+            gap: 1.2rem;
+        }
+
+        header h1 {
+            font-size: 1.4rem;
+            font-weight: 700;
+            letter-spacing: -0.3px;
+            color: var(--text-main);
+        }
+
+        header p {
+            font-size: 0.82rem;
+            color: var(--text-muted);
+            margin-top: 0.15rem;
+        }
+
+        /* --- Control Panel Grid --- */
+        .controls-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr 1fr auto;
+            gap: 0.75rem;
+            align-items: end;
+        }
+
+        @media (max-width: 768px) {
+            .controls-grid {
+                grid-template-columns: 1fr 1fr;
+            }
+        }
+
+        .control-group {
+            display: flex;
+            flex-direction: column;
+            gap: 0.3rem;
+        }
+
+        label {
+            font-size: 0.75rem;
+            font-weight: 500;
+            color: var(--text-muted);
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+        }
+
+        input, select {
+            background-color: var(--bg-base);
+            border: 1px solid var(--surface-border);
+            border-radius: 6px;
+            color: var(--text-main);
+            padding: 0.55rem 0.75rem;
+            font-size: 0.85rem;
+            outline: none;
+            transition: border-color 0.2s;
+            width: 100%;
+        }
+
+        input:focus, select:focus {
+            border-color: var(--accent);
+        }
+
+        /* --- Action Buttons --- */
+        .btn-container {
+            display: flex;
+            gap: 0.5rem;
+        }
+
+        button {
+            cursor: pointer;
+            font-weight: 600;
+            font-size: 0.85rem;
+            padding: 0.55rem 1rem;
+            border-radius: 6px;
+            border: none;
+            transition: all 0.15s ease;
+            white-space: nowrap;
+        }
+
+        .btn-primary {
+            background-color: var(--accent);
+            color: #090d16;
+            flex: 2;
+        }
+
+        .btn-primary:hover {
+            background-color: var(--accent-hover);
+        }
+
+        .btn-secondary {
+            background-color: transparent;
+            color: var(--text-main);
+            border: 1px solid var(--surface-border);
+            flex: 1;
+        }
+
+        .btn-secondary:hover {
+            background-color: rgba(255, 255, 255, 0.04);
+            border-color: var(--text-muted);
+        }
+
+        button:disabled {
+            opacity: 0.5;
+            cursor: not-allowed;
+        }
+
+        /* --- Telemetry / Stats Dashboard --- */
+        .telemetry-bar {
+            display: flex;
+            justify-content: space-between;
+            background-color: var(--bg-base);
+            border: 1px solid var(--surface-border);
+            border-radius: 6px;
+            padding: 0.5rem 1rem;
+            font-size: 0.8rem;
+            color: var(--text-muted);
+        }
+
+        .telemetry-bar span {
+            color: var(--text-main);
+            font-family: monospace;
+            font-weight: 600;
+        }
+
+        /* --- Visualization Stage --- */
+        .stage {
+            width: 100%;
+            height: 220px;
+            background-color: var(--bg-base);
+            border: 1px solid var(--surface-border);
+            border-radius: 6px;
+            display: flex;
+            align-items: flex-end;
+            justify-content: center;
+            padding: 0.75rem 0.5rem;
+            gap: 3px;
+            overflow: hidden;
+        }
+
+        .bar {
+            background-color: var(--accent);
+            flex: 1;
+            max-width: 24px;
+            border-radius: 3px 3px 0 0;
+            transition: height 0.05s ease, background-color 0.05s ease;
+        }
